@@ -21,24 +21,17 @@ Create the ID youself (i.e. with a counter variable or generate an id)
  
  */
 const state = {
-  todos: [
-    {
-      id: 1,
-      description: "Learn HTML",
-      done: false,
-    },
-    {
-      id: 2,
-      description: "Learn CSS",
-      done: false,
-    },
-    {
-      id: 3,
-      description: "Learn Javascript",
-      done: false,
-    },
-  ],
+  todos: [],
 };
+// Local Storage state.todos
+function updateLocalStorage() {
+  localStorage.setItem("todos", JSON.stringify(state.todos));
+}
+function syncroLocalStorage() {
+  const todos = JSON.parse(localStorage.getItem("todos"));
+  state.todos = todos;
+}
+syncroLocalStorage();
 render(state.todos);
 // @TODO render todos
 // <li><input type="checkbox" />Learn HTML</li>
@@ -50,6 +43,7 @@ addToDoForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   addNewTodo(); // first update state
+  updateLocalStorage();
   render(state.todos);
 });
 // Obtain the value of the input radio to make the filter work
@@ -82,10 +76,11 @@ clearAllbtn.addEventListener("click", (event) => {
   // After the filter the tasks remaining are the ones not done yet /open
   // Th original states Todo is now only the open task
   state.todos = notDoneTodos;
+  updateLocalStorage();
   // Now in the screen will be render the open tasks
   render(state.todos);
+  // This is to executed everything that is in state.todos one time
 });
-// This is to executed everything that is in state.todos one time
 
 function renderItem(description, id, done) {
   // Li Element
@@ -101,10 +96,12 @@ function renderItem(description, id, done) {
   newCheckBox.type = "checkbox";
   // Styling Checkbox
   newCheckBox.classList.add("todo-item__checkbox");
+  // done= true /done
   if (done) {
     newLi.classList.add("strike-through");
     newCheckBox.checked = true;
   }
+
   // create Text Node
   const text = document.createTextNode(description);
 
@@ -115,6 +112,7 @@ function renderItem(description, id, done) {
     if (foundToDo != null) {
       foundToDo.done = !foundToDo.done;
     }
+    updateLocalStorage();
   });
 
   // build everything together
