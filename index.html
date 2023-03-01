@@ -1,14 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>To-do-App</title>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header_title">To Do</h1>
+    </header>
+    <div class="wrapper">
+      <section id="main-header">
+        <div class="container">
+          <form id="add-todo-form">
+            <input
+              id="new-todo-input"
+              type="text"
+              placeholder="Get sh*t done"
+              autofocus
+            />
+            <button class="button-syle">Add ToDo</button>
+          </form>
+        </div>
+      </section>
+      <section class="filter">
+        <p class="headerText">Filter & Options</p>
+        <form class="options" id="optionsFilters">
+          <label>
+            <input
+              type="radio"
+              name="category"
+              id="all"
+              value="all"
+              checked="true"
+            /><span class="all"> All </span>
+          </label>
+          <label>
+            <input type="radio" name="category" id="open" value="open" /><span
+              class="all"
+            >
+              Open
+            </span>
+          </label>
+          <label>
+            <input type="radio" name="category" id="done" value="done" /><span
+              class="all"
+            >
+              Done
+            </span>
+          </label>
+
+          <button id="removeAllBtn" class="button-syle" type="submit">
+            Remove Done Todos
+          </button>
+        </form>
+      </section>
+      <section class="todo-list">
+        <p class="headerText">Your Todos</p>
+
+        <ul id="todo-list"></ul>
+      </section>
+    </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

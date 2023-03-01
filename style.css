@@ -1,0 +1,133 @@
+:root {
+  --primary: white;
+  --light: #eee;
+  --boxes: #118ab2;
+  --shadow: #f2507d;
+  --checkbox: #12d9a8;
+  --orange: #f5ab00;
+  --dark-blue: #073b4c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body {
+  background: white;
+}
+.header {
+  text-align: center;
+  background-color: #f2507d;
+  padding: 3rem 1rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.header_title {
+  margin: 0;
+  text-shadow: 2px 2px #118ab2, 4px 4px #f5ab00;
+}
+
+.wrapper {
+  max-width: 500px;
+  background: #fff;
+  margin: 137px auto;
+  padding: 28px 0 30px;
+  border-radius: 7px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: #eee;
+}
+
+section {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.container input[type="text"] {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border-color: white;
+}
+.button-syle {
+  background-color: #118ab2;
+  box-shadow: 3px 3px 0px #f2507d;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  outline: none;
+  border-color: #118ab2;
+}
+.headerText {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.strike-through {
+  text-decoration: line-through;
+}
+
+#todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#todo-list > * + * {
+  margin-top: 0.5rem;
+}
+
+.todo-item {
+  color: black;
+  font-size: 1.5rem;
+}
+.todo-item {
+  background-color: white;
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+  display: flex;
+  align-items: center;
+  border: 0.1em solid transparent;
+}
+
+.todo-item:focus-within {
+  box-shadow: 3px 3px 0 var(--shadow);
+  border: 0.1em solid var(--orange);
+}
+
+.todo-item > .todo-item__checkbox {
+  margin-right: 1em;
+}
+
+.todo-item__checkbox {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.1em;
+  width: 0.75em;
+  height: 0.75em;
+  border: 0.1em solid var(--dark-blue);
+  background-color: white;
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.todo-item__checkbox:checked {
+  background-color: var(--checkbox);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' focusable='false' %3E%3Cpath fill='none' stroke='white' stroke-width='3' d='M1.73 12.91l6.37 6.37L22.79 4.59' /%3E%3C/svg%3E");
+}
+
+.todo-item__text {
+  flex-grow: 1;
+}
