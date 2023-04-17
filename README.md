@@ -17,10 +17,10 @@ Features
 
 ## Usage
 
-1.Type in the task you want to add and click on the Add Task button
-2. Edit or delete tasks using the corresponding icons
-3. Mark tasks as completed by clicking on the checkbox next to the task
-4. Filter tasks by completed or uncompleted status using the filter buttons
+1.  Type in the task you want to add and click on the Add Task button
+2.  Edit or delete tasks using the corresponding icons
+3.  Mark tasks as completed by clicking on the checkbox next to the task
+4.  Filter tasks by completed or uncompleted status using the filter buttons
 
 
 ### Screenshot 
